@@ -1,0 +1,63 @@
+@import "./buttons.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+:root {
+  --Primary: #43dde6;
+  --White: #ffffff;
+}
+
+body {
+  color: var(--White);
+  background-color: var(--Primary);
+  font-family: "Roboto", sans-serif;
+}
+.wrapper {
+  max-inline-size: 900px;
+  /* display: grid;
+  text-align: center;
+  grid-column: center; */
+  margin: auto;
+}
+.player {
+  position: relative;
+  margin-block-start: 100px;
+}
+.player video {
+  inline-size: 100%;
+  aspect-ratio: 16/9;
+  vertical-align: middle;
+  object-fit: cover;
+}
+.player__progress {
+  display: flex;
+  padding: 0.8em;
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+}
+.player__progress input {
+  flex: 1;
+  z-index: 2;
+}
+.player__title {
+  font-size: 1.6em;
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 1.2em;
+}
+.player__buttons {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.player__overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 400ms opacity;
+}
+.player:hover .player__overlay {
+  opacity: 1;
+}
